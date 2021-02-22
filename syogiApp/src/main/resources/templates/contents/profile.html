@@ -1,0 +1,55 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="utf-8"/>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid" style="background-color:#2196F3;color:#fff;height:200px;">
+  <h1>将棋友達を作ろう</h1>
+
+</div>
+<br>
+
+<div class="container">
+  <div class="row">
+    <nav class="col-sm-3">
+      <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+        <li><a th:href="@{/profile}">プロフィール</a></li>
+        <li><a th:href="@{findUser}">友達一覧</a></li>
+        <li><a th:href="@{/findBattleType}">戦型選択</a></li>
+        <li><a th:href="@{findUser}">投稿履歴</a></li>
+        <li><a th:href="@{/findUser}">ユーザー検索</a></li>
+        <li><a th:href="@{/postInput}">新規投稿</a></li>
+        <li><a th:href="@{/login}">ログアウト</a></li>
+      </ul>
+    </nav>
+    <div class="col-sm-9">
+        <h1 class="my-3 ml-3">プロフィール画面</h1>
+
+        <div class="col-5 ml-3">
+            <table class="table table-bordered">
+                    <tr><td>ユーザーID</td><td th:text="${user_id}"></td></tr>
+                    <tr><td>性別</td><td th:text="${gender}"></td ></tr>
+                    <tr><td>趣味</td><td th:text="${hobby}"></td ></tr>
+                    <tr><td>段位、級位</td><td th:text="${grade}"></td></tr>
+                    <tr><td>好きな戦型</td><td th:text="${fav_battleType}"></td></tr>
+                    <tr><td>将棋歴</td><td th:text="${history}"></td></tr>
+                    <tr><td>コメント</td><td th:text="${comment}"></td></tr>
+            </table>
+            <a th:href="@{/friendList}">フレンドリスト</a>
+            <a th:href="@{/profileInput}">プロフィール画面</a>
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+</html>

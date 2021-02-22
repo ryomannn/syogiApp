@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" th:action="@{/findUser}" th:object="${user}">
+		<input type="text" th:field="*{userId}">
+		<button type="submit">検索</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="utf-8"/>
+   <title>逆L字ナビゲーション型</title>
+    <link rel="stylesheet" th:href="@{css/profile.css}" >
+</head>
+
+<body>
+    <header class="grovalNavigation">
+       <p>将棋</p>
+    </header>
+    <main>
+        <div class="localNavigation">
+
+            <p>ユーザー名</p>
+            <ul>
+                <li><button class="button1" type="button" name="button">プロフィール</button></li>
+                <li><button type="button" name="friendList">友達一覧</button></li>
+                <li><button class="button1" type="button" name="button">戦型選択</button></li>
+                <li><button class="button1" type="button" name="button">投稿履歴</button></li>
+                <li><a th:href="@{/findUser}">ユーザー検索</a></li>
+            </ul>
+            <a th:href="@{/postInput}">新規投稿</a>
+        </div>
+
+        <div class="content">
+        <p>プロフィール</p>
+        <a th:href="@{/profileInput}">プロフィール画面</a>
+
+        <div class="profile_table">
+           <div style="border: 5px solid rgb(157, 201, 238); padding: 0px; border-radius: 0px; height:  150px;">
+				<form action="/post" method="post" th:object="${postContents}">
+					<input type="text" th:field="*{contents}" >
+					<button type="submit">投稿</button>
+				</form>
+           </div>
+        </div>
+
+        </div>
+    </main>
+</body>
+</html>
